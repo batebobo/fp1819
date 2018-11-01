@@ -4,6 +4,7 @@
 
 ; Искаме да приложим функция върху всеки от елементите на списък.
 
+(define my-list '(1 2 3 4 5))
 (define tests
   (test-suite "Map tests"
     
