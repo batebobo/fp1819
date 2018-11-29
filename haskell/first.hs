@@ -1,6 +1,6 @@
 -- define variable
 a :: Int
-a = 10;
+a = 10
 
 -- define function
 sum2 :: Int -> Int -> Int
