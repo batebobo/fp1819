@@ -2,8 +2,8 @@
 getAllTuples :: [Int] -> [(Int, Int)]
 getAllTuples xs = [(x, y) | x <- xs, y <- xs]
 
-isAcuteTriangle :: [Int] -> [(Int, Int, Int)]
-isAcuteTriangle xs = [(x, y, z) | x <- xs, y <- xs, z <- xs,
+isRightTriangle :: [Int] -> [(Int, Int, Int)]
+isRightTriangle xs = [(x, y, z) | x <- xs, y <- xs, z <- xs,
                                                     x^2 + y^2 == z^2,
                                                     x < y] 
 
@@ -28,4 +28,3 @@ isSorted :: (Ord a) => [a] -> Bool
 isSorted [] = True
 isSorted [x] = True
 isSorted (x : y : ys) = if x >= y then False else isSorted (y : ys)
-
