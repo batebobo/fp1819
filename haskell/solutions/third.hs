@@ -1,3 +1,14 @@
+
+-- if you are wondering how to cast Num types
+-- conv :: (Integral a) => a -> Double
+-- conv x = (fromIntegral x) :: Double
+
+--example of other typeclass
+getSquareRoot :: (Floating a) => a -> a
+getSquareRoot x = sqrt x
+
+
+
 -- later we will see something cooler
 append :: [a] -> [a] -> [a]
 append [] xs = xs
@@ -31,8 +42,6 @@ isDescending n
     | n `mod` 10 > (n `div` 10) `mod` 10 = False
     | otherwise = isDescending (n `div` 10)
 
--- conv :: (Integral a) => a -> Double
--- conv x = (fromIntegral x) :: Double
 
 divisors :: Int -> [Int]
 divisors y = [x | x <- [1 .. y], y `rem` x == 0 ]
