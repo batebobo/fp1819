@@ -24,7 +24,7 @@ myTake 0 _ = []
 myTake n (x : xs) = x : myTake (n - 1) xs
 
 mySlice :: [a] -> Int -> Int -> [a]
-mySlice xs begin end = take end (drop begin xs)
+mySlice xs begin end = take (end - begin + 1) (drop begin xs)
 
 countOccurances :: (Eq a) => [a] -> a -> Int
 countOccurances [] _ = 0
