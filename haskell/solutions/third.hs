@@ -1,4 +1,3 @@
-
 -- if you are wondering how to cast Num types
 -- conv :: (Integral a) => a -> Double
 -- conv x = (fromIntegral x) :: Double
