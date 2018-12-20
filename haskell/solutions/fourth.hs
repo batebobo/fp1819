@@ -35,4 +35,5 @@ myDropWhile p all@(x : xs)
     | p x = myDropWhile p xs
     | otherwise = all
 
+strangeFunc1 :: (Num a) => [a] -> a
 strangeFunc1 xs = myFoldr (+) 0 $ myMap ((^2).(*2)) xs
