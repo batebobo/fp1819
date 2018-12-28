@@ -5,7 +5,7 @@ myMap _ [] = []
 myMap f (x : xs) = f x : myMap f xs
 
 myMap' :: (a -> b) -> [a] -> [b]
-myMap' f = foldl (\acc x -> (f x) : acc) []
+myMap' f = foldr (\x acc -> (f x) : acc) []
 
 myMap'' :: (a -> b) -> [a] -> [b]
 myMap'' f xs = [(f x) | x <- xs]
@@ -17,16 +17,14 @@ myFilter p (x : xs)
     | otherwise = myFilter p xs
 
 myFilter' :: (a -> Bool) -> [a] -> [a]
-myFilter' p = foldl (\acc x -> if (p x) then x : acc else acc) []
+myFilter' p = foldr (\x acc -> if (p x) then x : acc else acc) []
 
 myFilter'' :: (a -> Bool) -> [a] -> [a]
 myFilter'' p xs = [x | x <- xs, p x]
 
-
 myFoldr :: (a -> b -> b) -> b -> [a] -> b
 myFoldr _ nullv [] = nullv
 myFoldr f nullv (x : xs) = f x (myFoldr f nullv xs)
-
 
 myZipWith :: (a -> b -> c) -> [a] -> [b] -> [c]
 myZipWith _ _ [] = []
